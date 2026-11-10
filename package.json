@@ -1,0 +1,33 @@
+{
+  "name": "lasso",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Hyprland-native desktop control MCP — lasso windows to control them",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/toxicwind/ranch",
+    "directory": "packages/lasso"
+  },
+  "type": "module",
+  "bin": {
+    "lasso": "./bin/lasso.ts"
+  },
+  "scripts": {
+    "dev": "bun --hot run bin/lasso.ts",
+    "test": "bun test",
+    "typecheck": "tsgo --noEmit -p tsconfig.json",
+    "lint": "biome check src/ tests/ bin/",
+    "fmt": "biome format src/ tests/ bin/ --write",
+    "build": "bun build src/index.ts --target=bun --outdir=./dist"
+  },
+  "devDependencies": {
+    "@biomejs/biome": "^1.9.4",
+    "@types/bun": "latest",
+    "bun-types": "latest",
+    "typescript": "^5.6.3"
+  },
+  "dependencies": {
+    "hyprctl-wrapper": "latest"
+  }
+}
